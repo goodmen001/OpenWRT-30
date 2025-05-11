@@ -262,6 +262,11 @@ curl -so files/etc/sysctl.d/10-default.conf $mirror/openwrt/files/etc/sysctl.d/1
 curl -so files/etc/sysctl.d/15-vm-swappiness.conf $mirror/openwrt/files/etc/sysctl.d/15-vm-swappiness.conf
 curl -so files/etc/sysctl.d/16-udp-buffer-size.conf $mirror/openwrt/files/etc/sysctl.d/16-udp-buffer-size.conf
 
+# emmc-install
+mkdir -p files/sbin
+curl -so files/sbin/emmc-install $mirror/openwrt/files/sbin/emmc-install
+chmod 755 files/sbin/emmc-install
+
 # ZeroWrt Options Menu
 mkdir -p files/bin
 mkdir -p root
