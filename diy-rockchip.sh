@@ -359,6 +359,9 @@ git clone https://$github/sbwml/feeds_packages_net_aria2 -b 22.03 feeds/packages
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 
+# adguardhome
+git clone --depth=1 -b lua https://github.com/sirpdboy/luci-app-adguardhome package/new/luci-app-adguardhome
+
 # alist
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
