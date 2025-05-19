@@ -354,6 +354,9 @@ git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
 
+# adguardhome
+git clone --depth=1 -b lua https://github.com/sirpdboy/luci-app-adguardhome package/new/luci-app-adguardhome
+
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
 
