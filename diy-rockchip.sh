@@ -405,6 +405,7 @@ git clone https://github.com/gdy666/luci-app-lucky.git package/new/lucky
 
 # pkgs
 git clone https://github.com/sbwml/openwrt_pkgs package/new/openwrt_pkgs
+rm -rf package/new/openwrt_pkgs/luci-app-adguardhome
 
 # autocore-arm
 git clone https://github.com/sbwml/autocore-arm package/new/autocore-arm
