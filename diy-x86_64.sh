@@ -367,9 +367,6 @@ git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
 # OpenAppFilter
 git clone https://$github/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 
-# adguardhome
-git clone --depth=1 -b lua https://github.com/sirpdboy/luci-app-adguardhome package/new/luci-app-adguardhome
-
 # nlbwmon
 sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
 sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js
@@ -396,7 +393,6 @@ git clone https://github.com/gdy666/luci-app-lucky.git package/new/lucky
 
 # pkgs
 git clone https://github.com/sbwml/openwrt_pkgs package/new/openwrt_pkgs
-rm -rf package/new/openwrt_pkgs/luci-app-adguardhome
 
 # autocore-arm
 git clone https://github.com/sbwml/autocore-arm package/new/autocore-arm
