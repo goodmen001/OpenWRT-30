@@ -1,1 +1,30 @@
+name: Build releases
 
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps: 
+    - name: 设置环境
+      run: |
+        sudo timedatectl set-timezone 'Asia/Shanghai'
+        git config --global user.name 'actions'
+        git config --global user.email 'action@github.com'
+
+    - name: 下载OTA文件
+      run: |
+        mkdir -p ota
+        wget -O ota/ota.json https://api.cooluc.com/openwrt/ota.json
+
+    - name: Release OTA
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        username: zhao
+        server: ota.kejizero.online/
+        password: zj3753813
+        server-dir: x86_64/
+        local-dir: ota/
+        dangerous-clean-slate: true
