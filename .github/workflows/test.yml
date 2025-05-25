@@ -23,7 +23,7 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         username: zhao
-        server: ota.kejizero.online/
+        server: ota.kejizero.online
         password: zj3753813
         server-dir: x86_64/
         local-dir: ota/
