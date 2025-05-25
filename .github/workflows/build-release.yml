@@ -266,6 +266,6 @@ jobs:
         username: zhao
         server: ${{ secrets.ftp_address }}
         password: ${{ secrets.ftp_password }}
-        server-dir: x86_64/
+        server-dir: ${{ github.event.inputs.device }}/
         local-dir: $OPENWRT_PATH/ota/
         dangerous-clean-slate: true
