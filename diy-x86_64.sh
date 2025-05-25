@@ -264,7 +264,11 @@ mkdir -p root
 curl -so files/root/version.txt $mirror/openwrt/files/root/version.txt
 curl -so files/bin/ZeroWrt $mirror/openwrt/files/bin/ZeroWrt
 chmod +x files/bin/ZeroWrt
-chmod +x files/root/version.txt
+chmod +x files/root/version.txt 
+
+# key-build.pub
+curl -so files/root/key-build.pub $mirror/openwrt/files/root/key-build.pub
+chmod +x files/root/key-build.pub
 
 # NTP
 sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
