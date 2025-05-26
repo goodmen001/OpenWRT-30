@@ -300,7 +300,7 @@ sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base
 
 # CURRENT_DATE
 sed -i "/BUILD_DATE/d" package/base-files/files/usr/lib/os-release
-sed -i "/BUILD_ID/aBUILD_DATE=\"$CURRENT_DATE\"" package/base-files/files/usr/lib/os-release
+sed -i "/BUILD_ID/aBUILD_DATE=\"${{ env.CURRENT_DATE }}\"" package/base-files/files/usr/lib/os-release
 
 # golang 1.24
 rm -rf feeds/packages/lang/golang
