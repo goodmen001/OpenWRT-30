@@ -298,6 +298,11 @@ EOF
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='ZeroWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base-files/files/etc/openwrt_release
 
+# CURRENT_DATE
+CURRENT_DATE=$(date +%s)
+sed -i "/BUILD_DATE/d" package/base-files/files/usr/lib/os-release
+sed -i "/BUILD_ID/aBUILD_DATE=\"$CURRENT_DATE\"" package/base-files/files/usr/lib/os-release
+
 # golang 1.24
 rm -rf feeds/packages/lang/golang
 git clone https://$github/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
