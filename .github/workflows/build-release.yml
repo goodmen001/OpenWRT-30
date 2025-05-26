@@ -42,7 +42,6 @@ env:
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: ${{ github.event.inputs.device }}-OpenWrt
-  CURRENT_DATE: $(date +%s)
   TZ: Asia/Shanghai
   
 jobs:
