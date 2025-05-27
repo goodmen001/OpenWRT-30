@@ -235,93 +235,135 @@ jobs:
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-armsom_sige7-squashfs-sysupgrade.img.gz"
             }
           ],
           "friendlyarm,nanopc-t4": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopc-t4-squashfs-sysupgrade.img.gz"
             }
           ],
           "friendlyarm,nanopc-t6": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopc-t6-squashfs-sysupgrade.img.gz"
             }
           ],
           "friendlyarm,nanopi-r2c-plus": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2c-plus-squashfs-sysupgrade.img.gz"
             }
           ],
           "friendlyarm,nanopi-r2c": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz"
             }
           ],
           "friendlyarm,nanopi-r2s": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r3s": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r3s-squashfs-sysupgrade.img.gz"
+            }
+          ],
+          "friendlyarm,nanopi-r4s": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
               "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r4se": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r5c": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r5c-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r5s": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r5s-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r6c": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r6c-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "friendlyarm,nanopi-r6s": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r6s-squashfs-sysupgrade.img.gz"
             }
           ],
-          "friendlyarm,nanopi-r2s": [
+          "lunzn,fastrhino-r66s": [
             {
               "build_date": "$CURRENT_DATE",
               "sha256sum": "$SHA256_r4s",
-              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-lunzn_fastrhino-r66s-squashfs-sysupgrade.img.gz"
             }
           ],
+          "lunzn,fastrhino-r68s": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-lunzn_fastrhino-r68s-squashfs-sysupgrade.img.gz"
+            }
+          ],
+          "radxa,rock-5a": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-radxa_rock-5a-squashfs-sysupgrade.img.gz"
+            }
+          ],
+          "radxa,rock-5b": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-radxa_rock-5b-squashfs-sysupgrade.img.gz"
+            }
+          ],
+          "xunlong,orangepi-5-plus": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-xunlong_orangepi-5-plus-squashfs-sysupgrade.img.gz"
+            }
+          ],
+          "xunlong,orangepi-5": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_r4s",
+              "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-xunlong_orangepi-5-squashfs-sysupgrade.img.gz"
+            }
+          ]
         }
         EOF
         
