@@ -381,6 +381,10 @@ sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
 # Mosdns
 git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
 
+# luci-app-sqm
+rm -rf feeds/luci/applications/luci-app-sqm
+git clone https://github.com/zhiern/luci-app-sqm feeds/luci/applications/luci-app-sqm
+
 # OpenAppFilter
 git clone https://$github/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
 
