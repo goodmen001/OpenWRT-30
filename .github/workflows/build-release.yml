@@ -202,13 +202,23 @@ jobs:
         cd $OPENWRT_PATH
         mkdir -p ota
         OTA_URL="https://github.com/zhiern/OpenWRT/releases/download"
-        SHA256=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_armsom_sige3=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-armsom_sige3-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_armsom_sige7=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-armsom_sige7-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_t4=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopc-t4-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_t6=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopc-t6-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r2c_plus=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2c-plus-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r2c=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2c-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r2s=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r2s-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r3s=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r3s-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r4s=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r4se=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4se-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_r5c=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r5c-squashfs-sysupgrade.img.gz | awk '{print $1}')
         cat > ota/fw.json <<EOF
         {
           "friendlyarm,nanopi-r4s": [
             {
               "build_date": "$CURRENT_DATE",
-              "sha256sum": "$SHA256",
+              "sha256sum": "$SHA256_r4s",
               "url": "$OTA_URL/rockchip-OpenWrt/zerowrt-vip-plus-rockchip-armv8-friendlyarm_nanopi-r4s-squashfs-sysupgrade.img.gz"
             }
           ]
