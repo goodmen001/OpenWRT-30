@@ -366,6 +366,10 @@ git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
 
+# luci-app-sqm
+rm -rf feeds/luci/applications/luci-app-sqm
+git clone https://$github/zhiern/luci-app-sqm feeds/luci/applications/luci-app-sqm
+
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
 
