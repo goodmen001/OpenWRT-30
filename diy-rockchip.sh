@@ -383,7 +383,7 @@ git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
 
 # luci-app-sqm
 rm -rf feeds/luci/applications/luci-app-sqm
-git clone https://$github/zhiern/luci-app-sqm feeds/luci/applications/luci-app-sqm
+git clone $gitea/zhao/luci-app-sqm feeds/luci/applications/luci-app-sqm
 
 # OpenAppFilter
 git clone https://$github/sbwml/OpenAppFilter --depth=1 package/new/OpenAppFilter
