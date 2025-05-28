@@ -1,6 +1,6 @@
 <div align="center">
 
-![GitHub Header](https://git.kejizero.online/zhao/files/raw/branch/main/images/370035003-6d37cd69-a232-4444-9f91-30e5942a8938.svg)
+![GitHub Header](https://git.kejizero.online/zhao/image/raw/branch/main/openwrt.png)
 
 **基于 [OpenWrt](https://github.com/openwrt/openwrt) 打造的高效固件，覆盖 Rockchip、X86_64、Mediatek、Qualcommax 平台，专为进阶用户设计！**
 
