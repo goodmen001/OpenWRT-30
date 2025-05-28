@@ -215,7 +215,7 @@ curl -s $mirroropenwrt/patch/other/691-net-ipv6-fix-UDPv6-GSO-segmentation-with-
 
 # Docker
 rm -rf feeds/luci/applications/luci-app-dockerman
-git clone https://$github/oppen321/luci-app-dockerman -b main feeds/luci/applications/luci-app-dockerman
+git clone $gitea/zhao/luci-app-dockerman -b openwrt-24.10 feeds/luci/applications/luci-app-dockerman
     rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc}
     git clone $gitea/zhao/packages_utils_docker feeds/packages/utils/docker
     git clone $gitea/zhao/packages_utils_dockerd feeds/packages/utils/dockerd
