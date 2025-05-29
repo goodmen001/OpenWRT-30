@@ -223,7 +223,7 @@ git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-dockerman -b 
     rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc}
     git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_docker feeds/packages/utils/docker
     git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_dockerd feeds/packages/utils/dockerd
-    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/zhao/packages_utils_containerd feeds/packages/utils/containerd
+    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_containerd feeds/packages/utils/containerd
     git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_runc feeds/packages/utils/runc
     sed -i '/cgroupfs-mount/d' feeds/packages/utils/dockerd/Config.in
 sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
