@@ -7,7 +7,7 @@
 export mirror=https://script.kejizero.online
 
 # 私有Gitea
-export gitea=https://git.kejizero.online
+export gitea=git.kejizero.online/zhao
 
 # GitHub镜像
 export github="github.com"
@@ -174,16 +174,16 @@ curl -s $mirror/openwrt/patch/firewall4/nftables/0002-nftables-add-brcm-fullcone
 curl -s $mirror/openwrt/patch/firewall4/nftables/0003-drop-rej-file.patch > package/network/utils/nftables/patches/0003-drop-rej-file.patch
 
 # FullCone module
-git clone $gitea/zhao/nft-fullcone package/new/nft-fullcone
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/nft-fullcone package/new/nft-fullcone
 
 # IPv6 NAT
-git clone $gitea/zhao/package_new_nat6 package/new/nat6
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/package_new_nat6 package/new/nat6
 
 # natflow
-git clone $gitea/zhao/package_new_natflow package/new/natflow
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/package_new_natflow package/new/natflow
 
 # sfe
-git clone $gitea/zhao/shortcut-fe package/new/shortcut-fe
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/shortcut-fe package/new/shortcut-fe
 
 # Patch Luci add nft_fullcone/bcm_fullcone & shortcut-fe & natflow & ipv6-nat & custom nft command option
 pushd feeds/luci
@@ -215,12 +215,12 @@ curl -s $mirroropenwrt/patch/other/691-net-ipv6-fix-UDPv6-GSO-segmentation-with-
 
 # Docker
 rm -rf feeds/luci/applications/luci-app-dockerman
-git clone $gitea/zhao/luci-app-dockerman -b openwrt-24.10 feeds/luci/applications/luci-app-dockerman
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-dockerman -b openwrt-24.10 feeds/luci/applications/luci-app-dockerman
     rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc}
-    git clone $gitea/zhao/packages_utils_docker feeds/packages/utils/docker
-    git clone $gitea/zhao/packages_utils_dockerd feeds/packages/utils/dockerd
-    git clone $gitea/zhao/packages_utils_containerd feeds/packages/utils/containerd
-    git clone $gitea/zhao/packages_utils_runc feeds/packages/utils/runc
+    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_docker feeds/packages/utils/docker
+    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_dockerd feeds/packages/utils/dockerd
+    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/zhao/packages_utils_containerd feeds/packages/utils/containerd
+    git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_utils_runc feeds/packages/utils/runc
     sed -i '/cgroupfs-mount/d' feeds/packages/utils/dockerd/Config.in
 sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
 pushd feeds/packages
@@ -237,8 +237,8 @@ sed -i 's/procd_set_param stderr 1/procd_set_param stderr 0/g' feeds/packages/ut
 
 # UPnP
 rm -rf feeds/{packages/net/miniupnpd,luci/applications/luci-app-upnp}
-git clone $gitea/zhao/miniupnpd feeds/packages/net/miniupnpd -b v2.3.7
-git clone $gitea/zhao/luci-app-upnp feeds/luci/applications/luci-app-upnp -b master
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/miniupnpd feeds/packages/net/miniupnpd -b v2.3.7
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-upnp feeds/luci/applications/luci-app-upnp -b master
 
 # profile
 sed -i 's#\\u@\\h:\\w\\\$#\\[\\e[32;1m\\][\\u@\\h\\[\\e[0m\\] \\[\\033[01;34m\\]\\W\\[\\033[00m\\]\\[\\e[32;1m\\]]\\[\\e[0m\\]\\\$#g' package/base-files/files/etc/profile
@@ -304,7 +304,7 @@ sed -i "/BUILD_ID/aBUILD_DATE=\"$CURRENT_DATE\"" package/base-files/files/usr/li
 
 # golang 1.24
 rm -rf feeds/packages/lang/golang
-git clone $gitea/zhao/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
 # luci-app-webdav
 git clone https://$github/sbwml/luci-app-webdav package/new/luci-app-webdav
@@ -368,7 +368,7 @@ git clone https://$github/sbwml/openwrt-alist package/new/alist
 
 # luci-app-sqm
 rm -rf feeds/luci/applications/luci-app-sqm
-git clone $gitea/zhao/luci-app-sqm feeds/luci/applications/luci-app-sqm
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-sqm feeds/luci/applications/luci-app-sqm
 
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
