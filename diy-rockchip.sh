@@ -420,7 +420,7 @@ git clone https://github.com/sbwml/openwrt_pkgs package/new/openwrt_pkgs
 rm -rf package/new/openwrt_pkgs/luci-app-adguardhome
 
 # autocore-arm
-git clone https://github.com/sbwml/autocore-arm package/new/autocore-arm
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/autocore-arm package/new/autocore-arm
 
 # 使用特定的优化
 sed -i 's,-mcpu=generic,-march=armv8-a+crc+crypto,g' include/target.mk
