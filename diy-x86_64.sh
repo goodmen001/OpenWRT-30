@@ -174,16 +174,16 @@ curl -s $mirror/openwrt/patch/firewall4/nftables/0002-nftables-add-brcm-fullcone
 curl -s $mirror/openwrt/patch/firewall4/nftables/0003-drop-rej-file.patch > package/network/utils/nftables/patches/0003-drop-rej-file.patch
 
 # FullCone module
-git clone https://$github/oppen321/nft-fullcone package/new/nft-fullcone
+git clone $gitea/zhao/nft-fullcone package/new/nft-fullcone
 
 # IPv6 NAT
-git clone https://$github/oppen321/package_new_nat6 package/new/nat6
+git clone $gitea/zhao/package_new_nat6 package/new/nat6
 
 # natflow
-git clone https://$github/oppen321/package_new_natflow package/new/natflow
+git clone $gitea/zhao/package_new_natflow package/new/natflow
 
 # sfe
-git clone https://github.com/oppen321/shortcut-fe package/new/shortcut-fe
+git clone $gitea/zhao/shortcut-fe package/new/shortcut-fe
 
 # Patch Luci add nft_fullcone/bcm_fullcone & shortcut-fe & natflow & ipv6-nat & custom nft command option
 pushd feeds/luci
