@@ -368,7 +368,7 @@ git clone https://$github/sbwml/feeds_packages_net_aria2 -b 22.03 feeds/packages
 
 # SSRP & Passwall
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld -b openwrt-24.10
+git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
 
 # alist
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
