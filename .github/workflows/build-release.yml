@@ -116,7 +116,7 @@ jobs:
         echo "DEVICE_SUBTARGET=$DEVICE_SUBTARGET" >> $GITHUB_ENV
 
     - name: Cache Toolchain
-      if: env.CACHE_TOOLCHAIN == 'true'
+      if: ${{ github.event.inputs.ccache == 'true' }}
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
