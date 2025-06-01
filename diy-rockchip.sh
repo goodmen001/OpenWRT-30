@@ -24,6 +24,19 @@ sed -i 's,-SNAPSHOT,,g' package/base-files/image-config.in
 sed -i '/CONFIG_BUILDBOT/d' include/feeds.mk
 sed -i 's/;)\s*\\/; \\/' include/feeds.mk
 
+# Add device support
+rm -rf target/linux/rockchip
+rm -rf package/boot/{rkbin,uboot-rockchip,arm-trusted-firmware-rockchip}
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/target_linux_rockchip -b openwrt-24.10 target/linux/rockchip
+pushd target/linux/rockchip/patches-6.6/
+    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/014-rockchip-add-pwm-fan-controller-for-nanopi-r2s-r4s.patch
+    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/702-general-rk3328-dtsi-trb-ent-quirk.patch
+    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/703-rk3399-enable-dwc3-xhci-usb-trb-quirk.patch
+popd
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/uboot-rockchip -b openwrt-24.10 package/boot/uboot-rockchip
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/arm-trusted-firmware-rockchip -b openwrt-24.10 package/boot/arm-trusted-firmware-rockchip
+sed -i '/REQUIRE_IMAGE_METADATA/d' target/linux/rockchip/armv8/base-files/lib/upgrade/platform.sh
+
 # nginx - latest version
 rm -rf feeds/packages/net/nginx
 git clone https://$github/oppen321/feeds_packages_net_nginx -b openwrt-24.10 feeds/packages/net/nginx
