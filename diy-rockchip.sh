@@ -29,9 +29,9 @@ rm -rf target/linux/rockchip
 rm -rf package/boot/{rkbin,uboot-rockchip,arm-trusted-firmware-rockchip}
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/target_linux_rockchip -b openwrt-24.10 target/linux/rockchip
 pushd target/linux/rockchip/patches-6.6/
-    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/014-rockchip-add-pwm-fan-controller-for-nanopi-r2s-r4s.patch
-    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/702-general-rk3328-dtsi-trb-ent-quirk.patch
-    curl -Os https://script.kejizero.online/openwrt/patch/rockchip/703-rk3399-enable-dwc3-xhci-usb-trb-quirk.patch
+    curl -Os $mirror/openwrt/patch/rockchip/014-rockchip-add-pwm-fan-controller-for-nanopi-r2s-r4s.patch
+    curl -Os $mirror/openwrt/patch/rockchip/702-general-rk3328-dtsi-trb-ent-quirk.patch
+    curl -Os $mirror/openwrt/patch/rockchip/703-rk3399-enable-dwc3-xhci-usb-trb-quirk.patch
 popd
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/uboot-rockchip -b openwrt-24.10 package/boot/uboot-rockchip
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/arm-trusted-firmware-rockchip -b openwrt-24.10 package/boot/arm-trusted-firmware-rockchip
