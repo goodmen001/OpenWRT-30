@@ -116,6 +116,11 @@ jobs:
       run: |
         cp $CONFIG_FILE $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
+        GCC_NUM=$(echo "${{ github.event.inputs.gcc_version }}" | grep -o '[0-9]\+')
+        echo -e "\n# gcc $GCC_NUM" >> .config
+        echo -e "CONFIG_DEVEL=y" >> .config
+        echo -e "CONFIG_TOOLCHAINOPTS=y" >> .config
+        echo -e "CONFIG_GCC_USE_VERSION_$GCC_NUM=y\n" >> .config
         make defconfig > /dev/null 2>&1
         SOURCE_REPO="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
         echo "SOURCE_REPO=$SOURCE_REPO" >> $GITHUB_ENV
