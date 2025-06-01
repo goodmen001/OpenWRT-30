@@ -28,6 +28,19 @@ on:
         required: true
         default: '10.0.0.1'
         type: string
+      gcc_version:
+        description: 'Use GCC version'
+        required: true
+        default: 'GCC13'
+        type: choice
+        options:
+          - 'GCC12'
+          - 'GCC13'
+          - 'GCC14'
+      load_bpf:
+        description: 'Load bpf configuration to support dae'
+        type: boolean
+        default: true
       ccache:
         description: 'Enable ccache (Use Cache to speed up next build)'
         type: boolean
