@@ -25,7 +25,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: rockchip-OpenWrt
+  FIRMWARE_TAG: openwrt-24.10
   TZ: Asia/Shanghai
   
 jobs:
@@ -177,7 +177,7 @@ jobs:
         SHA256_radxa_rock_5b=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-radxa_rock-5b-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_xunlong_orangepi_5_plus=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-xunlong_orangepi-5-plus-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_xunlong_orangepi_5=$(sha256sum bin/targets/rockchip/armv8*/zerowrt-vip-plus-rockchip-armv8-xunlong_orangepi-5-squashfs-sysupgrade.img.gz | awk '{print $1}')
-        cat > ota/fw.json <<EOF
+        cat > ota/rk.json <<EOF
         {
           "armsom,sige3": [
             {
