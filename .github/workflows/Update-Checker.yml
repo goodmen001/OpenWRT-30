@@ -31,27 +31,12 @@ jobs:
       run: |
         echo ${{ steps.getHash.outputs.commitHash }} | tee .commitHash
 
-    - name: Trigger build for x86_64
+    - name: Trigger build
       if: steps.cacheHash.outputs.cache-hit != 'true'
       uses: peter-evans/repository-dispatch@v2
       with:
         token: ${{ github.token }}
-        event-type: ♻️ 更新 ZeroWrt X86_64
-        client-payload: |
-          {
-            "device": "x86_64"
-          }
-
-    - name: Trigger build for rockchip
-      if: steps.cacheHash.outputs.cache-hit != 'true'
-      uses: peter-evans/repository-dispatch@v2
-      with:
-        token: ${{ github.token }}
-        event-type: ♻️ 更新 ZeroWrt Rockchip
-        client-payload: |
-          {
-            "device": "rockchip"
-          }
+        event-type: ♻️ 固件更新
 
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
