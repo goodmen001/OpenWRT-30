@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: 🚀 Build ZeroWrt
+name: 🚀 编译 ZeroWrt
 
 on:
   workflow_dispatch:
