@@ -9,6 +9,7 @@
 name: 🚀 编译 ZeroWrt
 
 on:
+  repository_dispatch:
   workflow_dispatch:
   # schedule:
     # - cron: 0 17 * * *
