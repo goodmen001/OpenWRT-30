@@ -16,7 +16,7 @@ jobs:
       run: |
         export GITEA_USERTNAME=${{ secrets.GITEA_USERTNAME }}
         export GITEA_PASSWORD=${{ secrets.GITEA_PASSWORD }}
-        git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld
+        git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@git.kejizero.online//openwrt_helloworld
         echo "commitHash=$(git rev-parse HEAD)" >> $GITHUB_OUTPUT
 
     - name: Compare Commit Hash
