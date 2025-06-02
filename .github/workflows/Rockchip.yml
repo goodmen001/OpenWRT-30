@@ -25,7 +25,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: Rockchip-ZeroWrt
+  FIRMWARE_TAG: Rockchip
   
 jobs:
   build:
