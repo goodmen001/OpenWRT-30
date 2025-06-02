@@ -55,6 +55,16 @@ jobs:
         device:
           - x86_64
           - rockchip
+    env:
+      REPO_URL: https://github.com/openwrt/openwrt
+      REPO_BRANCH: v24.10.1
+      CONFIG_FILE: configs/${{ matrix.device }}.config
+      DIY_SCRIPT: scripts/diy-${{ matrix.device }}.sh
+      CACHE_TOOLCHAIN: true
+      UPLOAD_BIN_DIR: false
+      FIRMWARE_RELEASE: true
+      FIRMWARE_TAG: ${{ matrix.device }}-OpenWrt
+      TZ: Asia/Shanghai
 
     steps: 
     - name: Setup variables
