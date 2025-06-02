@@ -1,35 +1,32 @@
----
-name: Bug上报
-about: 创建报告以帮助我们改进
-title: ''
-labels: bug
-assignees: ''
-
----
-
-## 描述bug
-<!-- 对于bug的清晰简洁的描述. -->
-
-## 复现步骤
-<!-- 重现Bug步骤: -->
-<!-- 1.  选择菜单'...' -->
-<!-- 2.  点击按钮 '....' -->
-<!-- 3. 等等操作 '....' -->
-<!-- 4. 出现Bug -->
-
-## 你想要实现的目的
-<!--对你期望发生的事情的清晰简洁的描述。-->
-
-## 日志信息
-<!--包括问题相关的所有系统日志信息(这个很重要)。-->
-
-## 截图
-<!--如果适用，请添加屏幕截图以帮助解释你的问题。-->
-
-
-## 系统相关信息
-<!-- - passwall版本-->
-<!-- - 浏览器版本，例如Chrome 96.0.4664.45（正式版本） （64 位）-->
-
-## 其他相关信息
-<!-- 在此处添加有关该Bug的任何其他信息。-->
+name: 问题描述
+description: 反馈问题模板
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 详细叙述
+      description: 详细叙述问题
+    validations:
+      required: true
+  - type: checkboxes
+    id: duplicate_issue
+    attributes:
+      label: 重复 issue
+      description: 是否搜索了 issues
+      options:
+        - label: 没有类似的 issue
+          required: true
+  - type: input
+    id: model_name
+    attributes:
+      label: 具体型号
+      description: 硬件型号
+    validations:
+      required: true
+  - type: textarea
+    id: details_log
+    attributes:
+      label: 详细日志
+      description: make V=s -j1 时的问题日志
+    validations:
+      required: true
