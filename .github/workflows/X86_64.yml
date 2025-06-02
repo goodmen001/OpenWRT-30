@@ -25,8 +25,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: rockchip-OpenWrt
-  TZ: Asia/Shanghai
+  FIRMWARE_TAG: openwrt-24.10
   
 jobs:
   build:
@@ -35,7 +34,7 @@ jobs:
     steps: 
     - name: Setup variables
       run: |
-        sudo timedatectl set-timezone '$TZ'
+        sudo timedatectl set-timezone 'Asia/Shanghai'
         git config --global user.name 'actions'
         git config --global user.email 'action@github.com'
         
