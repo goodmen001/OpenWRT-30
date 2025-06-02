@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: 🚀 编译 ZeroWrt
+name: Build ZeroWrt
 
 on:
   repository_dispatch:
@@ -16,6 +16,14 @@ on:
   # watch:
   #   types: started
     inputs:
+      device:
+        description: 'Select the build device'
+        required: true
+        default: 'x86_64'
+        type: choice
+        options:
+          - 'x86_64'
+          - 'rockchip'
       lan_addr:
         description: 'Setting default LAN address'
         required: true
@@ -34,26 +42,21 @@ on:
         description: 'Enable ccache (Use Cache to speed up next build)'
         type: boolean
         default: true
+
+env:
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: v24.10.1
+  CONFIG_FILE: configs/${{ github.event.inputs.device }}.config
+  DIY_SCRIPT: scripts/diy-${{ github.event.inputs.device }}.sh
+  CACHE_TOOLCHAIN: true
+  UPLOAD_BIN_DIR: false
+  FIRMWARE_RELEASE: true
+  FIRMWARE_TAG: ${{ github.event.inputs.device }}-OpenWrt
+  TZ: Asia/Shanghai
   
 jobs:
   build:
     runs-on: ubuntu-24.04
-    strategy:
-      fail-fast: false
-      matrix:
-        device:
-          - x86_64
-          - rockchip
-    env:
-      REPO_URL: https://github.com/openwrt/openwrt
-      REPO_BRANCH: v24.10.1
-      CONFIG_FILE: configs/${{ matrix.device }}.config
-      DIY_SCRIPT: scripts/diy-${{ matrix.device }}.sh
-      CACHE_TOOLCHAIN: true
-      UPLOAD_BIN_DIR: false
-      FIRMWARE_RELEASE: true
-      FIRMWARE_TAG: ${{ matrix.device }}-OpenWrt
-      TZ: Asia/Shanghai
 
     steps: 
     - name: Setup variables
@@ -181,7 +184,7 @@ jobs:
         path: ${{ env.OPENWRT_PATH }}/bin
 
     - name: Online X86_64 updates
-      if: ${{ matrix.device == 'x86_64' }}
+      if: ${{ github.event.inputs.device == 'x86_64' }}
       run: |
         cd $OPENWRT_PATH
         mkdir -p ota
@@ -200,7 +203,7 @@ jobs:
         EOF
 
     - name: Online Rockchip updates
-      if: ${{ matrix.device == 'rockchip' }}
+      if: ${{ github.event.inputs.device == 'rockchip' }}
       run: |
         cd $OPENWRT_PATH
         mkdir -p ota
