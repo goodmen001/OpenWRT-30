@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: 🚀 编译 ZeroWrt
+name: 🚀 X86 ZeroWrt
 
 on:
   repository_dispatch:
@@ -15,43 +15,17 @@ on:
     # - cron: 0 17 * * *
   # watch:
   #   types: started
-    inputs:
-      device:
-        description: 'Select the build device'
-        required: true
-        default: 'x86_64'
-        type: choice
-        options:
-          - 'x86_64'
-          - 'rockchip'
-      lan_addr:
-        description: 'Setting default LAN address'
-        required: true
-        default: '10.0.0.1'
-        type: string
-      gcc_version:
-        description: 'Use GCC version'
-        required: true
-        default: 'GCC13'
-        type: choice
-        options:
-          - 'GCC12'
-          - 'GCC13'
-          - 'GCC14'
-      ccache:
-        description: 'Enable ccache (Use Cache to speed up next build)'
-        type: boolean
-        default: true
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
   REPO_BRANCH: v24.10.1
-  CONFIG_FILE: configs/${{ github.event.inputs.device }}.config
-  DIY_SCRIPT: scripts/diy-${{ github.event.inputs.device }}.sh
+  CONFIG_FILE: configs/rockchip.config
+  DIY_SCRIPT: scripts/diy-rockchip.sh
+  CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: ${{ github.event.inputs.device }}-OpenWrt
+  FIRMWARE_TAG: rockchip-OpenWrt
   TZ: Asia/Shanghai
   
 jobs:
@@ -61,7 +35,7 @@ jobs:
     steps: 
     - name: Setup variables
       run: |
-        sudo timedatectl set-timezone 'Asia/Shanghai'
+        sudo timedatectl set-timezone '$TZ'
         git config --global user.name 'actions'
         git config --global user.email 'action@github.com'
         
@@ -117,11 +91,6 @@ jobs:
       run: |
         cp $CONFIG_FILE $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
-        GCC_NUM=$(echo "${{ github.event.inputs.gcc_version }}" | grep -o '[0-9]\+')
-        echo -e "\n# gcc $GCC_NUM" >> .config
-        echo -e "CONFIG_DEVEL=y" >> .config
-        echo -e "CONFIG_TOOLCHAINOPTS=y" >> .config
-        echo -e "CONFIG_GCC_USE_VERSION_$GCC_NUM=y\n" >> .config
         make defconfig > /dev/null 2>&1
         SOURCE_REPO="$(echo $REPO_URL | awk -F '/' '{print $(NF)}')"
         echo "SOURCE_REPO=$SOURCE_REPO" >> $GITHUB_ENV
@@ -131,7 +100,7 @@ jobs:
         echo "DEVICE_SUBTARGET=$DEVICE_SUBTARGET" >> $GITHUB_ENV
 
     - name: Cache Toolchain
-      if: ${{ github.event.inputs.ccache == 'true' }}
+      if: env.CACHE_TOOLCHAIN == 'true'
       uses: HiGarfield/cachewrtbuild@main
       with:
         ccache: false
