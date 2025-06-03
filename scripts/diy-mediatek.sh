@@ -58,9 +58,6 @@ git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/OpenAppFilter package/
 sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
 sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js
 
-# autocore-arm
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/autocore-arm package/new/autocore-arm
-
 # 主题设置
 sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
 sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT-Mediatek" target="_blank">OpenWRT-Mediatek</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
