@@ -143,7 +143,7 @@ jobs:
         name: ${{ env.SOURCE_REPO }}-bin-${{ env.DEVICE_TARGET }}-${{ env.DEVICE_SUBTARGET }}-${{ env.FILE_DATE }}
         path: ${{ env.OPENWRT_PATH }}/bin
 
-    - name: Online X86_64 updates
+    - name: Online Mediatek_mt7981 updates
       if: steps.compile.outputs.status == 'success'
       run: |
         cd $OPENWRT_PATH
