@@ -21,7 +21,6 @@ env:
   REPO_BRANCH: v24.10.1
   CONFIG_FILE: configs/rockchip.config
   DIY_SCRIPT: scripts/diy-rockchip.sh
-  CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
