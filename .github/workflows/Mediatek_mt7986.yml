@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: 📡 Mediatek_mt7986
+name: 🛜 Mediatek_mt7986
 
 on:
   repository_dispatch:
@@ -19,7 +19,7 @@ on:
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   REPO_BRANCH: 2410
-  CONFIG_FILE: configs/mediatek_mt7981.config
+  CONFIG_FILE: configs/mediatek_mt7986.config
   DIY_SCRIPT: scripts/diy-mediatek.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
