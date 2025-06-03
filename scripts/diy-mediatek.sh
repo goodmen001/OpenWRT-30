@@ -84,3 +84,7 @@ function addLinks() {
 document.addEventListener("DOMContentLoaded", addLinks);
 </script>
 EOF
+
+# SSRP & Passwall
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
