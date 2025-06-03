@@ -9,7 +9,6 @@
 name: 📡 Mediatek_mt7981
 
 on:
-  repository_dispatch:
   workflow_dispatch:
   # schedule:
     # - cron: 0 17 * * *
