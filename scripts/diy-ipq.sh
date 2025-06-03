@@ -7,6 +7,12 @@
 # 脚本URL
 export mirror=https://script.kejizero.online
 
+# 私有Gitea
+export gitea=git.kejizero.online/zhao
+
+# GitHub镜像
+export github="github.com"
+
 # 修改默认ip
 sed -i "s/192.168.1.1/10.0.0.1/g" package/base-files/files/bin/config_generate
 
