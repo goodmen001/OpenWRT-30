@@ -13,7 +13,7 @@ git clone --depth=1 https://$github/sbwml/packages_lang_golang -b 24.x feeds/pac
 # 替换插件
 rm -rf feeds/packages/net/{aria2,ariang,alist,samba4,xray-core,v2ray-core,v2ray-geodata,sing-box}
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/{luci-app-aria2,luci-app-alist,luci-app-argon-config,luci-app-aria2,luci-app-homeproxy,luci-app-openclash,luci-app-passwall}
+rm -rf feeds/luci/applications/{luci-app-aria2,luci-app-alist,luci-app-argon-config,luci-app-aria2,luci-app-homeproxy,luci-app-openclash,luci-app-passwall,luci-app-sqm}
 
 # aria2 & ariaNG
 git clone https://$github/sbwml/ariang-nginx package/new/ariang-nginx
@@ -23,7 +23,7 @@ git clone https://$github/sbwml/feeds_packages_net_aria2 -b 22.03 feeds/packages
 git clone https://$github/sbwml/feeds_packages_net_samba4 feeds/packages/net/samba4
 
 # 默认设置
-git clone --depth=1 -b mediatek https://github.com/zhiern/default-settings package/new/default-settings
+git clone --depth=1 -b mediatek https://$github/zhiern/default-settings package/new/default-settings
 
 # helloworld
 git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
@@ -33,7 +33,7 @@ git clone --depth=1 https://github.com/jerrykuku/luci-theme-argon.git package/ne
 curl -s $mirror/Customize/argon/bg1.jpg > package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # argon-config
-git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+git clone --depth=1 https://$github/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 sed -i "s/bing/none/g" package/new/luci-app-argon-config/root/etc/config/argon
 
 # adguardhome
@@ -46,7 +46,6 @@ git clone https://$github/sbwml/openwrt-alist package/new/alist
 git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
 
 # luci-app-sqm
-rm -rf feeds/luci/applications/luci-app-sqm
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-sqm feeds/luci/applications/luci-app-sqm
 
 # OpenAppFilter
