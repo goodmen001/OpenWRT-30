@@ -8,7 +8,7 @@ export github="github.com"
 
 ## golang 为 1.24.x
 rm -rf feeds/packages/lang/golang
-git clone --depth=1 https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+git clone --depth=1 https://$github/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
 # 替换插件
 rm -rf feeds/packages/net/{aria2,ariang,alist,samba4,xray-core,v2ray-core,v2ray-geodata,sing-box}
