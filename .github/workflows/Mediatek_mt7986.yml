@@ -21,7 +21,6 @@ env:
   REPO_BRANCH: 2410
   CONFIG_FILE: configs/mediatek_mt7986.config
   DIY_SCRIPT: scripts/diy-mediatek.sh
-  CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
