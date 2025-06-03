@@ -19,8 +19,8 @@ on:
 env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   REPO_BRANCH: 2410
-  CONFIG_FILE: configs/x86_64.config
-  DIY_SCRIPT: scripts/diy-x86_64.sh
+  CONFIG_FILE: configs/mediatek_mt7981.config
+  DIY_SCRIPT: scripts/diy-mediatek.sh
   CLASH_KERNEL: amd64
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
