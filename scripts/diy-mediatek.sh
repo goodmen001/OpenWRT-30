@@ -3,10 +3,6 @@
 # 自定义URL
 export mirror=https://script.kejizero.online
 
-# 替换插件
-rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/applications/luci-app-argon-config
-
 # 翻译
 echo -e "\nmsgid \"Control\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
 echo -e "msgstr \"控制\"" >> feeds/luci/modules/luci-base/po/zh_Hans/base.po
@@ -87,4 +83,6 @@ EOF
 
 # SSRP & Passwall
 rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/{luci-app-alist,luci-app-argon-config,luci-app-aria2,luci-app-homeproxy,luci-app-openclash,luci-app-passwall,
 git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
