@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: 💻 Mediatek_mt7981
+name: 📡 Mediatek_mt7981
 
 on:
   repository_dispatch:
