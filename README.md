@@ -35,7 +35,7 @@
 
 ## 💾 ZeroWrt 固件烧写（SD）
 
-**推荐工具：**<a href="https://www.balena.io/etcher/" target="_blank" ><img style="height:25px;" src="https://git.kejizero.online/zhao/files/raw/branch/main/images/balena.svg" /></a>
+**推荐工具：**<a href="https://www.balena.io/etcher/" target="_blank" ><img style="height:25px;" src="https://git.kejizero.online/zhao/image/raw/branch/main/balenaetcher.svg" /></a>
 
 **SD卡容量：2GB 或更多**
 
