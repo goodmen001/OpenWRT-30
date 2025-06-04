@@ -2,10 +2,13 @@
 
 ![GitHub Header](date/openwrt.png)
 
-**基于 [OpenWrt](https://github.com/openwrt/openwrt) 打造的高效固件，覆盖 Rockchip、X86_64、Mediatek、Qualcommax 平台，专为进阶用户设计！** 
-** I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)** 
+**基于 [OpenWrt](https://github.com/openwrt/openwrt) 打造的高效固件，覆盖 Rockchip、X86_64、Mediatek、Qualcommax 平台，专为进阶用户设计！**  
 
 </div>
+
+# Welcome to Lean's git source of OpenWrt and packages
+
+I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)
 
 ---
 
