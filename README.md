@@ -49,9 +49,9 @@
 
 - **电脑（Windows），其它操作系统自行搜索相关工具**
 - **数据线：USB-A to USB-A 或 Type-C to USB-A**
-- **瑞芯微开发工具：**<a href="https://git.kejizero.online/zhao/document/raw/branch/main/RKDevTool_Release_v2.84.zip" target="_blank" >RKDevTool_Release_v2.84.zip</a>
+- **瑞芯微开发工具：**<a href="https://github.com/zhiern/OpenWRT/raw/refs/heads/openwrt-24.10/date/RKDevTool_Release_v2.84.zip" target="_blank" >RKDevTool_Release_v2.84.zip</a>
 
-- **Mask 设备驱动：**<a href="https://git.kejizero.online/zhao/document/raw/branch/main/DriverAssitant_v5.1.1.zip" target="_blank" >DriverAssitant_v5.1.1.zip</a>
+- **Mask 设备驱动：**<a href="https://github.com/zhiern/OpenWRT/raw/refs/heads/openwrt-24.10/date/DriverAssitant_v5.1.1.zip" target="_blank" >DriverAssitant_v5.1.1.zip</a>
 
 ### 📥 准备固件
 
@@ -81,7 +81,7 @@
   
   
   
-- ***注意：通过电脑烧写固件请使用本站下载的 [瑞芯微开发工具](https://git.kejizero.online/zhao/document/raw/branch/main/RKDevTool_Release_v2.84.zip)。***
+- ***注意：通过电脑烧写固件请使用本站下载的 [瑞芯微开发工具](https://github.com/zhiern/OpenWRT/raw/refs/heads/openwrt-24.10/date/RKDevTool_Release_v2.84.zip)。***
 
 ------
 
