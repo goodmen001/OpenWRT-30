@@ -55,21 +55,6 @@ sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='ZeroWrt-$(date +%Y%m%d)
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base-files/files/etc/openwrt_release
 sed -i 's|^OPENWRT_DEVICE_REVISION=".*"|OPENWRT_DEVICE_REVISION="ZeroWrt 标准版 @R250603 BY OPPEN321"|' package/base-files/files/usr/lib/os-release
 
-# golang 1.24
-rm -rf feeds/packages/lang/golang
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_lang_golang -b 24.x feeds/packages/lang/golang
-
-# adguardhome
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-adguardhome package/new/luci-app-adguardhome
-
-# argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
-curl -s $mirror/Customize/argon/bg1.jpg > package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-
-# argon-config
-git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
-sed -i "s/bing/none/g" package/new/luci-app-argon-config/root/etc/config/argon
-
 # 主题设置
 sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
 sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
@@ -86,7 +71,39 @@ src/gz openwrt_routing https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.
 src/gz openwrt_telephony https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/packages/aarch64_cortex-a53/telephony
 EOF
 
-rm -rf package/emortal/default-settings
+# golang 1.24
+rm -rf feeds/packages/lang/golang
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_lang_golang -b 24.x feeds/packages/lang/golang
+
+# SSRP & Passwall
+rm -rf feeds/luci/applications/{luci-app-passwall.luci-app-passwall2,luci-app-openclash}
+rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
+git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
+
+# Mosdns
+rm -rf feeds/luci/applications/luci-app-mosdns
+rm -rf feeds/packages/net/mosdns
+rm -rf feeds/packages/utils/v2dat
+git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
+
+# adguardhome
+rm -rf feeds/luci/applications/luci-app-adguardhome
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-adguardhome package/new/luci-app-adguardhome
+
+# luci-app-sqm
+rm -rf feeds/luci/applications/luci-app-sqm
+git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-sqm feeds/luci/applications/luci-app-sqm
+
+# argon
+git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
+curl -s $mirror/Customize/argon/bg1.jpg > package/new/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
+# argon-config
+git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
+sed -i "s/bing/none/g" package/new/luci-app-argon-config/root/etc/config/argon
+
+# default-settings
+rm -rf package/lean/default-settings
 git clone --depth=1 -b ipq https://github.com/zhiern/default-settings package/new/default-settings
 
 # install feeds
