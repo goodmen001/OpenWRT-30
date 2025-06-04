@@ -21,6 +21,9 @@ sed -i "s/192.168.1.1/10.0.0.1/g" package/base-files/luci2/bin/config_generate
 sed -i 's/LEDE/ZeroWrt/' package/base-files/files/bin/config_generate
 sed -i 's/LEDE/ZeroWrt/' package/base-files/luci2/bin/config_generate
 
+# 修改内核版本
+sed -i 's/6.6/6.12/' target/linux/qualcommax/Makefile
+
 # banner
 curl -s $mirror/Customize/base-files/banner > package/base-files/files/etc/banner
 
