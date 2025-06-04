@@ -8,6 +8,8 @@
 
 ---
 
+I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)
+
 ## 🔍 固件信息概览
 
 - 🛠 **源码基础**：[OpenWrt 官方]
