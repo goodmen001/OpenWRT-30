@@ -24,6 +24,9 @@ sed -i 's/LEDE/ZeroWrt/' package/base-files/luci2/bin/config_generate
 # 修改内核版本
 sed -i 's/6.6/6.12/' target/linux/qualcommax/Makefile
 
+##WiFi
+sed -i "s/LEDE/AE86/g" package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 # banner
 curl -s $mirror/Customize/base-files/banner > package/base-files/files/etc/banner
 
