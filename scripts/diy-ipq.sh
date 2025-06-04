@@ -58,12 +58,6 @@ sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='ZeroWrt-$(date +%Y%m%d)
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base-files/files/etc/openwrt_release
 sed -i 's|^OPENWRT_DEVICE_REVISION=".*"|OPENWRT_DEVICE_REVISION="ZeroWrt 标准版 @R250603 BY OPPEN321"|' package/base-files/files/usr/lib/os-release
 
-# 主题设置
-sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
-sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
-sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
-sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
-
 # distfeeds.conf
 mkdir -p files/etc/opkg
 cat > files/etc/opkg/distfeeds.conf <<EOF
@@ -104,6 +98,12 @@ curl -s $mirror/Customize/argon/bg1.jpg > package/new/luci-theme-argon/htdocs/lu
 # argon-config
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/new/luci-app-argon-config
 sed -i "s/bing/none/g" package/new/luci-app-argon-config/root/etc/config/argon
+
+# 主题设置
+sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
+sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
+sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
+sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
 
 # default-settings
 rm -rf package/lean/default-settings
