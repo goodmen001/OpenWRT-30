@@ -59,16 +59,8 @@ sed -i 's|^OPENWRT_DEVICE_REVISION=".*"|OPENWRT_DEVICE_REVISION="ZeroWrt 标准�
 rm -rf feeds/packages/lang/golang
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
-# SSRP & Passwall
-rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
-git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openwrt_helloworld package/new/helloworld
-
 # adguardhome
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-adguardhome package/new/luci-app-adguardhome
-
-# nlbwmon
-sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/root/usr/share/luci/menu.d/luci-app-nlbwmon.json
-sed -i 's/services/network/g' feeds/luci/applications/luci-app-nlbwmon/htdocs/luci-static/resources/view/nlbw/config.js
 
 # argon
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/new/luci-theme-argon
@@ -83,9 +75,6 @@ sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_b
 sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer.htm
 sed -i 's#<a class="luci-link" href="https://github.com/openwrt/luci" target="_blank">Powered by <%= ver.luciname %> (<%= ver.luciversion %>)</a> /#<a class="luci-link" href="https://www.kejizero.online" target="_blank">探索无限</a> /#' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
 sed -i 's|<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme <%# vPKG_VERSION %></a>|<a href="https://github.com/zhiern/OpenWRT" target="_blank">OpenWRT</a> |g' package/new/luci-theme-argon/luasrc/view/themes/argon/footer_login.htm
-
-# autocore-arm
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/autocore-arm package/new/autocore-arm
 
 # distfeeds.conf
 mkdir -p files/etc/opkg
