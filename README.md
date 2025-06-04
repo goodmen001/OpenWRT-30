@@ -73,7 +73,7 @@
   
   **① 点击 “system” 路径选择按钮（选择 zip 解压出来的 IMG 文件）**
   
-  <img src="https://cdn.cooluc.com/r4s/select_firmware.png" />
+  <img src="date/select_firmware.png" />
   
   
   
