@@ -23,6 +23,7 @@ sed -i 's/LEDE/ZeroWrt/' package/base-files/files/bin/config_generate
 curl -s $mirror/Customize/base-files/banner > package/base-files/files/etc/banner
 
 # key-build.pub
+mkdir -p files/root
 curl -so files/root/key-build.pub $mirror/openwrt/files/root/key-build.pub
 chmod +x files/root/key-build.pub
 
