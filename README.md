@@ -63,7 +63,7 @@
 
 - **Mask 模式连接电脑（R5S 断电状态下，取下 SD 卡，使用数据线连接电脑。长按 “Mask” 按钮，接通 R5S 电源直至电脑发现新设备后释放 “Mask” 按钮）**
 
-  <img style="height:100px;" src="https://git.kejizero.online/zhao/files/raw/branch/main/images/r5s_mask.webp" />
+  <img style="height:100px;" src="https://git.kejizero.online/zhao/image/raw/branch/main/r5s.webp" />
 
 
 
@@ -81,7 +81,7 @@
   
   
   
-- ***注意：通过电脑烧写固件请使用本站下载的 [瑞芯微开发工具](https://git.kejizero.online/zhao/files/raw/branch/main/RKDevTool_Release_v2.84.zip)。***
+- ***注意：通过电脑烧写固件请使用本站下载的 [瑞芯微开发工具](https://git.kejizero.online/zhao/document/raw/branch/main/RKDevTool_Release_v2.84.zip)。***
 
 ------
 
