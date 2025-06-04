@@ -6,7 +6,7 @@
 
 </div>
 
-# Welcome to Lean's git source of OpenWrt and packages
+# 欢迎来到 OPPEN321 的 OpenWrt固件仓库
 
 I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)
 
