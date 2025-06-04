@@ -8,7 +8,9 @@
 
 ---
 
-## 🔍 Firmware Overview I18N: [English](README_EN.md) | [简体中文](README.md) 
+I18N: [English](README_EN.md) | [简体中文](README.md) 
+
+## 🔍 Firmware Overview 
 - 🛠 **Source Base**: [OpenWrt Official]
   - Rockchip, X86_64, ARMv8: Based on [OpenWrt Official](https://github.com/openwrt/openwrt)
   - Mediatek: Based on [Padavanonly](https://github.com/padavanonly/immortalwrt-mt798x-24.10)
