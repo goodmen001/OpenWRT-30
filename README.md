@@ -6,11 +6,9 @@
 
 </div>
 
-I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)
-
 ---
 
-## 🔍 固件信息概览
+## 🔍 固件信息概览 I18N: [English](README_EN.md) | [简体中文](README.md) | [日本語](README_JA.md)
 
 - 🛠 **源码基础**：[OpenWrt 官方]
   - Rockchip、X86_64、ARMv8：基于 [OpenWrt 官方](https://github.com/openwrt/openwrt)
