@@ -49,9 +49,9 @@
 
 - **电脑（Windows），其它操作系统自行搜索相关工具**
 - **数据线：USB-A to USB-A 或 Type-C to USB-A**
-- **瑞芯微开发工具：**<a href="https://git.kejizero.online/zhao/files/raw/branch/main/RKDevTool_Release_v2.84.zip" target="_blank" >RKDevTool_Release_v2.84.zip</a>
+- **瑞芯微开发工具：**<a href="https://git.kejizero.online/zhao/document/raw/branch/main/RKDevTool_Release_v2.84.zip" target="_blank" >RKDevTool_Release_v2.84.zip</a>
 
-- **Mask 设备驱动：**<a href="https://git.kejizero.online/zhao/files/src/branch/main/DriverAssitant_v5.1.1.zip" target="_blank" >DriverAssitant_v5.1.1.zip</a>
+- **Mask 设备驱动：**<a href="https://git.kejizero.online/zhao/document/raw/branch/main/DriverAssitant_v5.1.1.zip" target="_blank" >DriverAssitant_v5.1.1.zip</a>
 
 ### 📥 准备固件
 
