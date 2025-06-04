@@ -16,14 +16,14 @@ on:
   #   types: started
 
 env:
-  REPO_URL: https://github.com/qosmio/openwrt-ipq
-  REPO_BRANCH: 24.10-nss
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_BRANCH: master
   CONFIG_FILE: configs/ipq807x.config
   DIY_SCRIPT: scripts/diy-ipq.sh
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: Mediatek_mt7981
+  FIRMWARE_TAG: IPQ807x
   
 jobs:
   build:
