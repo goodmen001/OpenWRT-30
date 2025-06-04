@@ -7,7 +7,7 @@
 </div>
 
 ---
-I18N: [English](README_EN.md) | [简体中文](README.md) 
+I18N: [English](README_EN.md) | [简体中文](README.md) | [韩语](README_KR.md)
 
 ## 🔍 固件信息概览 
 - 🛠 **源码基础**：[OpenWrt 官方]
