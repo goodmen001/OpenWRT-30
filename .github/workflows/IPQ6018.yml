@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: ⚡ IPQ6018x
+name: ⚡ IPQ6018
 
 on:
   workflow_dispatch:
