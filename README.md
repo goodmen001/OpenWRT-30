@@ -63,7 +63,7 @@
 
 - **Mask 模式连接电脑（R5S 断电状态下，取下 SD 卡，使用数据线连接电脑。长按 “Mask” 按钮，接通 R5S 电源直至电脑发现新设备后释放 “Mask” 按钮）**
 
-  <img style="height:100px;" src="https://git.kejizero.online/zhao/image/raw/branch/main/r5s.webp" />
+  <img style="height:100px;" src="date/r5s.webp" />
 
 
 
