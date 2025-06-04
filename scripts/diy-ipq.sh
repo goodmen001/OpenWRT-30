@@ -86,10 +86,8 @@ src/gz openwrt_routing https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.
 src/gz openwrt_telephony https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/packages/aarch64_cortex-a53/telephony
 EOF
 
-rm -rf package/emortal/default-settings/files/99-default-settings-chinese
-
-
-
+rm -rf package/emortal/default-settings
+git clone --depth=1 -b ipq https://github.com/zhiern/default-settings package/new/default-settings
 
 # install feeds
 ./scripts/feeds update -a
