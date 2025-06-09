@@ -399,7 +399,7 @@ rm -rf feeds/luci/applications/luci-app-sqm
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-sqm feeds/luci/applications/luci-app-sqm
 
 # OpenAppFilter
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/OpenAppFilter package/new/OpenAppFilter
+git clone https://github.com/destan19/OpenAppFilter package/new/OpenAppFilter
 
 # adguardhome
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-adguardhome package/new/luci-app-adguardhome
