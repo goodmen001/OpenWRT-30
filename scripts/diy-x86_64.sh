@@ -13,7 +13,7 @@ export gitea=git.kejizero.online/zhao
 export github="github.com"
 
 # 下载进度条
-CURL_BAR="--progress-bar"
+# CURL_BAR="--progress-bar"
 
 # 使用 O2 级别的优化
 sed -i 's/Os/O2/g' include/target.mk
