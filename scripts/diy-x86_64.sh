@@ -437,7 +437,7 @@ exit 0
 '> ./package/base-files/files/etc/rc.local
 
 # 默认设置
-git clone --depth=1 -b openwrt-24.10 https://github.com/oppen321/default-settings package/new/default-settings
+git clone --depth=1 -b openwrt-24.10 https://github.com/zhiern/default-settings package/new/default-settings
 
 # distfeeds.conf
 mkdir -p files/etc/opkg
