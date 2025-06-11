@@ -115,6 +115,7 @@ CONFIG_PACKAGE_bash-completion=y
 CONFIG_PACKAGE_bind-host=y
 CONFIG_PACKAGE_bind-libs=y
 CONFIG_PACKAGE_blkid=y
+CONFIG_PACKAGE_block-mount=y
 CONFIG_PACKAGE_brcmfmac-firmware-usb=y
 CONFIG_PACKAGE_btrfs-progs=y
 CONFIG_PACKAGE_ca-certificates=y
