@@ -1,1 +1,16 @@
+#=================================================
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+# Lisence: MIT
+# Author: P3TERX
+# Blog: https://p3terx.com
+#=================================================
 
+name: 📡 Mediatek_Uboot
+
+on:
+  workflow_dispatch:
+  # schedule:
+    # - cron: 0 17 * * *
+  # watch:
+  #   types: started
