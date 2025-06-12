@@ -14,3 +14,8 @@ on:
     # - cron: 0 17 * * *
   # watch:
   #   types: started
+
+env:
+  REPO_URL: https://github.com/1715173329/bl-mt798x-oss
+  REPO_BRANCH: atf-2025
+  FIRMWARE_TAG: Mediatek_Uboot
