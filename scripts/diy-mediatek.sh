@@ -53,7 +53,7 @@ sed -i "s/hostname='.*'/hostname='ZeroWrt'/g" package/base-files/files/bin/confi
 ##加入作者信息
 sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='ZeroWrt-$(date +%Y%m%d)'/g"  package/base-files/files/etc/openwrt_release
 sed -i "s/DISTRIB_REVISION='*.*'/DISTRIB_REVISION=' By OPPEN321'/g" package/base-files/files/etc/openwrt_release
-sed -i 's|^OPENWRT_RELEASE=".*"|OPENWRT_RELEASE="ZeroWrt 标准版 @R250605 BY OPPEN321"|' package/base-files/files/usr/lib/os-release
+sed -i "s|^OPENWRT_RELEASE=\".*\"|OPENWRT_RELEASE=\"ZeroWrt 标准版 @R$(date +%Y%m%d) BY OPPEN321\"|" package/base-files/files/usr/lib/os-release
 
 sed -i "2iuci set istore.istore.channel='ZeroWrt_OPPEN321'" package/emortal/default-settings/files/99-default-settings
 sed -i "3iuci commit istore" package/emortal/default-settings/files/99-default-settings
