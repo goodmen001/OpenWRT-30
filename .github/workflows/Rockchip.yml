@@ -172,6 +172,7 @@ jobs:
         SHA256_r5s=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-friendlyarm_nanopi-r5s-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_r6c=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-friendlyarm_nanopi-r6c-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_r6s=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-friendlyarm_nanopi-r6s-squashfs-sysupgrade.img.gz | awk '{print $1}')
+        SHA256_huake_guangmiao_g4c=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-huake_guangmiao-g4c-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_r66s=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-lunzn_fastrhino-r66s-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_r68s=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-lunzn_fastrhino-r68s-squashfs-sysupgrade.img.gz | awk '{print $1}')
         SHA256_radxa_rock_5a=$(sha256sum bin/targets/rockchip/armv8*/openwrt-rockchip-armv8-radxa_rock-5a-squashfs-sysupgrade.img.gz | awk '{print $1}')
@@ -278,6 +279,13 @@ jobs:
               "url": "$OTA_URL/Rockchip/openwrt-rockchip-armv8-friendlyarm_nanopi-r6s-squashfs-sysupgrade.img.gz"
             }
           ],
+          "huake,guangmiao-g4c": [
+            {
+              "build_date": "$CURRENT_DATE",
+              "sha256sum": "$SHA256_huake_guangmiao_g4c",
+              "url": "$OTA_URL/Rockchip/openwrt-rockchip-armv8-huake_guangmiao-g4c-squashfs-sysupgrade.img.gz"
+            }
+          ],  
           "lunzn,fastrhino-r66s": [
             {
               "build_date": "$CURRENT_DATE",
