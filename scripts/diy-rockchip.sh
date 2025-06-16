@@ -388,6 +388,9 @@ git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openw
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
 
+# openlist
+git clone https://$github/sbwml/luci-app-openlist package/new/openlist
+
 # netdata
 sed -i 's/syslog/none/g' feeds/packages/admin/netdata/files/netdata.conf
 
