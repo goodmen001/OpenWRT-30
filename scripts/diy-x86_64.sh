@@ -366,6 +366,9 @@ git clone -b openwrt-24.10 https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/openw
 rm -rf feeds/packages/net/alist feeds/luci/applications/luci-app-alist
 git clone https://$github/sbwml/openwrt-alist package/new/alist
 
+# openlist
+git clone https://$github/sbwml/luci-app-openlist package/new/openlist
+
 # luci-app-sqm
 rm -rf feeds/luci/applications/luci-app-sqm
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-sqm feeds/luci/applications/luci-app-sqm
