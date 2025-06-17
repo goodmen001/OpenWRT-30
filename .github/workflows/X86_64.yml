@@ -173,8 +173,9 @@ jobs:
         mv -f $OPENWRT_PATH/ota/* ./
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
-        mv -f $OPENWRT_PATH/bin/targets/x86/64/packages/* packages
-        tar -zcf Packages.tar.gz packages
+        mkdir -p kernel
+        mv -f packages/* kernel
+        tar -zcf kernel.tar.gz kernel
         rm -rf packages feeds.buildinfo version.buildinfo
         echo "KERNEL=$(cat *.manifest | grep ^kernel | cut -d- -f2 | tr -d ' ')" >> $GITHUB_ENV
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
