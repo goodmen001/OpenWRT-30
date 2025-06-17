@@ -18,7 +18,7 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v24.10.1
+  REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: configs/x86_64.config
   DIY_SCRIPT: scripts/diy-x86_64.sh
   CLASH_KERNEL: amd64
@@ -68,12 +68,7 @@ jobs:
       run: |
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        git clone -b openwrt-24.10 --single-branch --filter=blob:none https://github.com/openwrt/openwrt openwrt_snap
-        find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
-        rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
-        cp -rf ./openwrt_snap/package/* ./openwrt/package/
         curl -o ./openwrt/feeds.conf.default https://script.kejizero.online/Customize/feeds/feeds.conf.default
-        rm -rf ./openwrt_snap
         cd openwrt
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
