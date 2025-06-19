@@ -18,7 +18,8 @@ on:
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
-  REPO_BRANCH: v24.10.1
+  IMM_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_BRANCH: openwrt-24.10
   CONFIG_FILE: configs/rockchip.config
   DIY_SCRIPT: scripts/diy-rockchip.sh
   CLASH_KERNEL: arm64
@@ -68,13 +69,15 @@ jobs:
       run: |
         df -hT $GITHUB_WORKSPACE
         git clone $REPO_URL -b $REPO_BRANCH openwrt
-        git clone -b openwrt-24.10 --single-branch --filter=blob:none https://github.com/openwrt/openwrt openwrt_snap
-        find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
-        rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
-        cp -rf ./openwrt_snap/package/* ./openwrt/package/
-        curl -o ./openwrt/feeds.conf.default https://script.kejizero.online/Customize/feeds/feeds.conf.default
-        rm -rf ./openwrt_snap
+        git clone $IMM_URL -b $REPO_BRANCH immortalwrt
         cd openwrt
+        rm -rf ./target/linux/rockchip
+        cp -rf ../immortalwrt/target/linux/rockchip ./target/linux/rockchip
+        curl -o feeds.conf.default https://script.kejizero.online/Customize/feeds/feeds.conf.default
+        rm -rf package/boot/{rkbin,uboot-rockchip,arm-trusted-firmware-rockchip}
+        cp -rf ../immortalwrt/package/boot/uboot-rockchip ./package/boot/uboot-rockchip
+        cp -rf ../immortalwrt/package/boot/arm-trusted-firmware-rockchip ./package/boot/arm-trusted-firmware-rockchip
+        sed -i '/REQUIRE_IMAGE_METADATA/d' target/linux/rockchip/armv8/base-files/lib/upgrade/platform.sh
         echo "OPENWRT_PATH=$PWD" >> $GITHUB_ENV
         COMMIT_AUTHOR=$(git show -s --date=short --format="作者: %an")
         echo "COMMIT_AUTHOR=$COMMIT_AUTHOR" >> $GITHUB_ENV
@@ -338,9 +341,10 @@ jobs:
         mv -f $OPENWRT_PATH/ota/* ./
         cat sha256sums
         cp $OPENWRT_PATH/.config build.config
-        mv -f $OPENWRT_PATH/bin/packages/*/*/*.ipk packages
-        tar -zcf Packages.tar.gz packages
-        rm -rf packages feeds.buildinfo version.buildinfo
+        mkdir -p kernel
+        mv -f packages/* kernel
+        tar -zcf kernel.tar.gz kernel
+        rm -rf packages feeds.buildinfo version.buildinfo kernel
         echo "KERNEL=$(cat *.manifest | grep ^kernel | cut -d- -f2 | tr -d ' ')" >> $GITHUB_ENV
         echo "FIRMWARE_PATH=$PWD" >> $GITHUB_ENV
         
