@@ -13,7 +13,7 @@ export gitea=git.kejizero.online/zhao
 export github="github.com"
 
 # 下载进度条
-CURL_BAR="--progress-bar"
+# CURL_BAR="--progress-bar"
 
 # 使用 O2 级别的优化
 sed -i 's/Os/O2/g' include/target.mk
@@ -25,17 +25,17 @@ sed -i '/CONFIG_BUILDBOT/d' include/feeds.mk
 sed -i 's/;)\s*\\/; \\/' include/feeds.mk
 
 # Add device support
-rm -rf target/linux/rockchip
-rm -rf package/boot/{rkbin,uboot-rockchip,arm-trusted-firmware-rockchip}
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/target_linux_rockchip -b openwrt-24.10 target/linux/rockchip
-pushd target/linux/rockchip/patches-6.6/
-    curl -Os $mirror/openwrt/patch/rockchip/014-rockchip-add-pwm-fan-controller-for-nanopi-r2s-r4s.patch
-    curl -Os $mirror/openwrt/patch/rockchip/702-general-rk3328-dtsi-trb-ent-quirk.patch
-    curl -Os $mirror/openwrt/patch/rockchip/703-rk3399-enable-dwc3-xhci-usb-trb-quirk.patch
-popd
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/uboot-rockchip -b openwrt-24.10 package/boot/uboot-rockchip
-git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/arm-trusted-firmware-rockchip -b openwrt-24.10 package/boot/arm-trusted-firmware-rockchip
-sed -i '/REQUIRE_IMAGE_METADATA/d' target/linux/rockchip/armv8/base-files/lib/upgrade/platform.sh
+# rm -rf target/linux/rockchip
+# rm -rf package/boot/{rkbin,uboot-rockchip,arm-trusted-firmware-rockchip}
+# git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/target_linux_rockchip -b openwrt-24.10 target/linux/rockchip
+# pushd target/linux/rockchip/patches-6.6/
+#     curl -Os $mirror/openwrt/patch/rockchip/014-rockchip-add-pwm-fan-controller-for-nanopi-r2s-r4s.patch
+#     curl -Os $mirror/openwrt/patch/rockchip/702-general-rk3328-dtsi-trb-ent-quirk.patch
+#     curl -Os $mirror/openwrt/patch/rockchip/703-rk3399-enable-dwc3-xhci-usb-trb-quirk.patch
+# popd
+# git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/uboot-rockchip -b openwrt-24.10 package/boot/uboot-rockchip
+# git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/arm-trusted-firmware-rockchip -b openwrt-24.10 package/boot/arm-trusted-firmware-rockchip
+# sed -i '/REQUIRE_IMAGE_METADATA/d' target/linux/rockchip/armv8/base-files/lib/upgrade/platform.sh
 
 # nginx - latest version
 rm -rf feeds/packages/net/nginx
@@ -452,15 +452,14 @@ src/gz openwrt_luci https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.
 src/gz openwrt_packages https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/packages/aarch64_generic/packages
 src/gz openwrt_routing https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/packages/aarch64_generic/routing
 src/gz openwrt_telephony https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/packages/aarch64_generic/telephony
-src/gz openwrt_core https://mirrors.tuna.tsinghua.edu.cn/openwrt/releases/24.10.1/targets/rockchip/armv8/kmods/6.6.86-1-a8e18e0ecc66cc99303d258424ec0db8
 EOF
 
 # Vermagic
-curl -s https://downloads.openwrt.org/releases/24.10.1/targets/rockchip/armv8/openwrt-24.10.1-rockchip-armv8.manifest \
-| grep "^kernel -" \
-| awk '{print $3}' \
-| sed -n 's/.*~\([a-f0-9]\+\)-r[0-9]\+/\1/p' > vermagic
-sed -i 's#grep '\''=\[ym\]'\'' \$(LINUX_DIR)/\.config\.set | LC_ALL=C sort | \$(MKHASH) md5 > \$(LINUX_DIR)/\.vermagic#cp \$(TOPDIR)/vermagic \$(LINUX_DIR)/.vermagic#g' include/kernel-defaults.mk
+# curl -s https://downloads.openwrt.org/releases/24.10.1/targets/rockchip/armv8/openwrt-24.10.1-rockchip-armv8.manifest \
+# | grep "^kernel -" \
+# | awk '{print $3}' \
+# | sed -n 's/.*~\([a-f0-9]\+\)-r[0-9]\+/\1/p' > vermagic
+# sed -i 's#grep '\''=\[ym\]'\'' \$(LINUX_DIR)/\.config\.set | LC_ALL=C sort | \$(MKHASH) md5 > \$(LINUX_DIR)/\.vermagic#cp \$(TOPDIR)/vermagic \$(LINUX_DIR)/.vermagic#g' include/kernel-defaults.mk
 
 # Toolchain Cache
 #if [ "$BUILD_FAST" = "y" ]; then
