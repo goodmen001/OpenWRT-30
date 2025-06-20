@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: ⚡ IPQ6018
+name: ⚡ IPQ60xx
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ env:
   CACHE_TOOLCHAIN: true
   UPLOAD_BIN_DIR: false
   FIRMWARE_RELEASE: true
-  FIRMWARE_TAG: IPQ6018
+  FIRMWARE_TAG: IPQ60xx
   
 jobs:
   build:
