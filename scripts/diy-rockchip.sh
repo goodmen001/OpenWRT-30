@@ -74,6 +74,9 @@ sed -i 's/OpenWrt/ZeroWrt/' package/base-files/files/bin/config_generate
 # banner
 curl -s $mirror/Customize/base-files/banner > package/base-files/files/etc/banner
 
+# 更换kernel
+curl -s https://raw.githubusercontent.com/immortalwrt/immortalwrt/refs/heads/openwrt-24.10/include/kernel-6.6 > include/kernel-6.6
+
 # make olddefconfig
 curl -sL $mirror/openwrt/patch/kernel-6.6/kernel/0003-include-kernel-defaults.mk.patch | patch -p1
 
