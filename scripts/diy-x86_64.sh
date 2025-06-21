@@ -381,7 +381,10 @@ git clone https://$github/sbwml/luci-app-mosdns -b v5 package/new/mosdns
 
 # OpenAppFilter
 git clone https://github.com/destan19/OpenAppFilter package/new/OpenAppFilter
-
+#dog
+git clone https://github.com/sirpdboy/luci-app-watchdog package/new/watchdog
+# beardropper
+git clone https://github.com/natelol/luci-app-beardropper package/new/luci-app-beardropper
 # adguardhome
 git clone https://$GITEA_USERTNAME:$GITEA_PASSWORD@$gitea/luci-app-adguardhome package/new/luci-app-adguardhome
 
